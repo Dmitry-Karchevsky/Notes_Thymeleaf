@@ -1,18 +1,14 @@
 package notesapp.controllers;
 
-import notesapp.entitie.Note;
 import notesapp.sertvice.NoteService;
-import org.dom4j.rule.Mode;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
-import java.util.List;
 
 @Controller
 public class NotesController {
@@ -47,6 +43,13 @@ public class NotesController {
                                          @RequestParam("id") Long id) {
 
         noteService.update(id, name, text);
+        model.addAttribute("notes", noteService.getAllNotes());
+        return "home";
+    }
+
+    @PostMapping("/delete")
+    public String delete(Model model, @RequestParam("id") Long id) {
+        noteService.delete(id);
         model.addAttribute("notes", noteService.getAllNotes());
         return "home";
     }

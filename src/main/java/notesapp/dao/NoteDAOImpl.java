@@ -11,7 +11,6 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -71,11 +70,11 @@ public class NoteDAOImpl implements NoteDAO {
     }
 
     @Override
-    public void delete(Note note) {
+    public void delete(Long id) {
         final String sql = "delete from notes where id=:id";
 
         Map<String,Object> map=new HashMap<>();
-        map.put("id", note.getId());
+        map.put("id", id);
 
         template.execute(sql,map,new PreparedStatementCallback<Object>() {
             @Override

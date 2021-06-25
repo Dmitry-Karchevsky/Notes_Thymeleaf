@@ -47,4 +47,8 @@ public class NoteService {
         noteDAO.update(note);
     }
 
+    public void delete(Long id) {
+        noteDAO.delete(id);
+    }
+
 }

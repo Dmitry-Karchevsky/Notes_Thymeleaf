@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,10 +29,10 @@
                    aria-label="Search">
         </form>
         <form th:action="@{/filter}" method="post" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-            <label> Фильтр по дате </label>
-            <br> Начало </br>
+            <br> Фильтр по дате </br>
+            <label>Начало</label>
             <p>Выберите дату: <input name="date_start" type="date" class="form-control form-control-dark mt-3"></p>
-            <br> Конец </br>
+            <label>Конец</label>
             <p>Выберите дату: <input name="date_end" type="date" class="form-control form-control-dark mt-3"></p>
             <button type="submit" class="form-control form-control-dark mt-3">Искать</button>
         </form>
@@ -45,6 +45,7 @@
             <th> Название</th>
             <th> Дата обновления</th>
             <th> Заметка</th>
+            <th></th>
             <th></th>
         </tr>
         </thead>
@@ -63,8 +64,14 @@
                 <td>
                     <button type="submit" class="form-control form-control-dark mt-3">Изменить</button>
                 </td>
-
             </form>
+            <form th:action="@{/delete}" method="post" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <td>
+                <input type="hidden" name="id" th:value="${note.id}">
+                      <button type="submit" class="form-control form-control-dark mt-3">Удалить</button>
+            </td>
+            </form>
+
         </tr>
         </tbody>
     </table>

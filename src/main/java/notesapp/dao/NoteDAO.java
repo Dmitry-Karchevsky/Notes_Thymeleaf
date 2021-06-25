@@ -16,7 +16,7 @@ public interface NoteDAO {
 
     void update(Note note);
 
-    void delete(Note note);
+    void delete(Long id);
 
     Note findById(Long id);
 }

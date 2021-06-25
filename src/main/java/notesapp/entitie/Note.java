@@ -23,5 +23,4 @@ public class Note {
     private String text;
     @Column(name = "date_note")
     private LocalDate dateWrite;
-
 }
