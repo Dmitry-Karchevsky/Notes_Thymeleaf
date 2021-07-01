@@ -1,6 +1,6 @@
 package notesapp.dao;
 
-import notesapp.entitie.Note;
+import notesapp.entity.Note;
 
 import java.time.LocalDate;
 import java.util.List;

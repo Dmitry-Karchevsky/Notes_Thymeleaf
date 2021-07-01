@@ -1,6 +1,6 @@
 package notesapp.dao;
 
-import notesapp.entitie.Note;
+import notesapp.entity.Note;
 import notesapp.mapper.NoteRowMapper;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.PreparedStatementCallback;

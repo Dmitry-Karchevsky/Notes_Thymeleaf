@@ -1,6 +1,6 @@
 package notesapp.mapper;
 
-import notesapp.entitie.Note;
+import notesapp.entity.Note;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

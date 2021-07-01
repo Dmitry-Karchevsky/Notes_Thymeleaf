@@ -1,7 +1,7 @@
-package notesapp.sertvice;
+package notesapp.service;
 
 import notesapp.dao.NoteDAO;
-import notesapp.entitie.Note;
+import notesapp.entity.Note;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

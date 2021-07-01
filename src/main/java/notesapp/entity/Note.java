@@ -1,4 +1,4 @@
-package notesapp.entitie;
+package notesapp.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
